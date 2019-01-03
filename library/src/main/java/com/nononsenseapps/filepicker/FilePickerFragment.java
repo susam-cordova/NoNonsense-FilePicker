@@ -13,7 +13,6 @@ import android.os.FileObserver;
 import android.support.annotation.NonNull;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.content.FileProvider;
 import android.support.v4.content.Loader;
 import android.support.v7.util.SortedList;
 import android.support.v7.widget.util.SortedListAdapterCallback;
@@ -197,9 +196,9 @@ public class FilePickerFragment extends AbstractFilePickerFragment<File> {
     @NonNull
     @Override
     public Uri toUri(@NonNull final File file) {
-        return FileProvider
+        return MyFileProvider
                 .getUriForFile(getContext(),
-                        getContext().getApplicationContext().getPackageName() + ".provider",
+                        getContext().getApplicationContext().getPackageName() + ".myfileprovider",
                         file);
     }
 
