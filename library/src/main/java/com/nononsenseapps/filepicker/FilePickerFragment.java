@@ -196,9 +196,9 @@ public class FilePickerFragment extends AbstractFilePickerFragment<File> {
     @NonNull
     @Override
     public Uri toUri(@NonNull final File file) {
-        return MyFileProvider
+        return FilePickerFileProvider
                 .getUriForFile(getContext(),
-                        getContext().getApplicationContext().getPackageName() + ".myfileprovider",
+                        getContext().getApplicationContext().getPackageName() + ".filepickerfileprovider",
                         file);
     }
 
